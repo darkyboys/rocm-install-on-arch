@@ -10,3 +10,12 @@ rocm-hip-sdk \
 rocm-device-libs \
 rocminfo
 ```
+After installation make sure to lock the ROCM Packages.
+You can execute this command directly to do that
+```bash
+sudo sh -c 'cat >> /etc/pacman.conf <<EOF
+
+# Lock ROCm packages
+IgnorePkg = rocm-core rocm-hip-runtime rocm-hip-sdk rocm-device-libs rocminfo
+EOF'
+```
