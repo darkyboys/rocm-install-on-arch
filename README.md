@@ -12,11 +12,20 @@ rocminfo
 ```
 
 **Add the rocm path (if nore already)**
-run these commands after the packages are installed:
+Add these to your `~/.bashrc` or any shell file you have after the packages are installed:
 ```bash
-echo 'export PATH=/opt/rocm/bin:$PATH' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=/opt/rocm/lib:/opt/rocm/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
-source ~/.bashrc
+export LD_LIBRARY_PATH=/opt/rocm/lib:/opt/rocm/lib64:$LD_LIBRARY_PATH
+# ROCm / HIP setup
+export ROCM_PATH=/opt/rocm
+export HIP_PATH=/opt/rocm
+export HIP_PLATFORM=amd
+
+export PATH=/opt/rocm/bin:$PATH
+export PATH=/opt/rocm/llvm/bin:$PATH
+
+export CC=/opt/rocm/llvm/bin/clang
+export CXX=/opt/rocm/llvm/bin/clang++
+
 ```
 
 ## Optional
