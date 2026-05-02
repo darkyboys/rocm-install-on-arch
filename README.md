@@ -10,6 +10,16 @@ rocm-hip-sdk \
 rocm-device-libs \
 rocminfo
 ```
+
+**Add the rocm path (if nore already)**
+run these commands after the packages are installed:
+```bash
+echo 'export PATH=/opt/rocm/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/opt/rocm/lib:/opt/rocm/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+```
+
+## Optional
 After installation make sure to lock the ROCM Packages.
 You can execute this command directly to do that
 ```bash
