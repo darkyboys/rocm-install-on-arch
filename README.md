@@ -28,6 +28,26 @@ export CXX=/opt/rocm/llvm/bin/clang++
 
 ```
 
+## Select a default device (Recommended)
+If you have multiple ROCm Devices and you want to use just one then run
+
+```bash
+rocminfo
+```
+
+And then carefully look for the device once you find it as (Agent X, eg: Agent 2)
+Write down this in the `bachrc` or `zshrc` file
+
+```
+export HIP_VISIBLE_DEVICES=Index
+```
+
+example:
+
+```bash
+export HIP_VISIBLE_DEVICES=0
+```
+
 ## Optional
 After installation make sure to lock the ROCM Packages.
 You can execute this command directly to do that
